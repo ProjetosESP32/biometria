@@ -12,6 +12,12 @@ class Person extends Model
 
     // protected $table = 'people';
 
+    protected $fillable = [
+        'name',
+        'enrollment',
+        'rfid',
+    ];
+
     public function biometries()
     {
         return $this->hasMany(Biometry::class, 'person_id');

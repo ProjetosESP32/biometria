@@ -9,6 +9,21 @@ class Room extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'mac_address',
+    ];
+
+    protected static function booted()
+    {
+        $macAddressCleanup = function (Room $room) {
+            $room->mac_address = preg_replace('/[^0-9A-Fa-f]/', '', $room->mac_address);
+        };
+
+        static::creating($macAddressCleanup);
+        static::updating($macAddressCleanup);
+    }
+
     public function histories()
     {
         return $this->hasMany(RoomHistory::class);

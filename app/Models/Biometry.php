@@ -9,6 +9,10 @@ class Biometry extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'fingerprint',
+    ];
+
     public function person()
     {
         return $this->belongsTo(Person::class, 'person_id');
