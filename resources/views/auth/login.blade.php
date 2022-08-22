@@ -31,13 +31,13 @@
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
                     <x-input id="remember_me" type="checkbox" class="rounded" name="remember"/>
-                    <span class="ml-2 font-bold text-sm text-blue1-500">Lembrar senha</span>
+                    <span class="ml-2 font-bold text-sm text-blue-label">Lembrar senha</span>
                 </label>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                <a class="underline text-sm font-extrabold text-blue2 hover:text-gray-900" href="{{ route('password.request') }}">
+                <a class="underline text-sm font-extrabold text-blue-dark hover:text-gray-900" href="{{ route('password.request') }}">
                     Esqueci minha senha
                 </a>
                 @endif
