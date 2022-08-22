@@ -1,10 +1,9 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+    <x-card-reset-pass>
+        <h1 class="text-blue-title1 font-extrabold text-3xl mb-7 mt-0" > Informe sua nova senha</h1>
+        <div class="mb-4 text-sm text-blue-desc text-lg">
+            {{ __('Por favor, preencha os campos abaixo com a nova senha.') }}
+        </div>
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -38,11 +37,14 @@
                                     name="password_confirmation" required />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
+            <div class="flex flex-col items-center justify-center mt-8">
+                <x-buttonLogin type="submit" class="bg-primary w-full ml-0" >
+                    {{ __('Confirmar') }}
+                </x-buttonLogin>
+                <a class="underline font-bold text-blue-label mt-3 cursor-pointer" >
+                    Voltar
+                </a>
             </div>
         </form>
-    </x-auth-card>
+    </x-card-reset-pass>
 </x-guest-layout>
