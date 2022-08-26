@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -18,10 +18,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-    <div class="font-sans text-gray-900 antialiased">
+<body class="font-sans antialiased">
+    <main>
         {{ $slot }}
-    </div>
+    </main>
 </body>
 
 </html>

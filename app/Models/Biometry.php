@@ -13,6 +13,10 @@ class Biometry extends Model
         'fingerprint',
     ];
 
+    protected $hidden = [
+        'fingerprint',
+    ];
+
     public function person()
     {
         return $this->belongsTo(Person::class, 'person_id');
