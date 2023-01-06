@@ -21,4 +21,27 @@ class Biometry extends Model
     {
         return $this->belongsTo(Person::class, 'person_id');
     }
+
+    public function insert($fingerprint)
+    {
+        Biometry::create(array(
+            'person_id' => $this->person(),
+            'fingerprint' => $fingerprint,
+            'created_at' => NOW(),
+            'updated_at' => NOW()
+        ));
+    }
+
+    public function deletePerson($person_id)
+    {
+        Biometry::where('person_id', '=', $person_id)->delete();
+    }
+
+    public function updateFingerprint($fingerprint, $newFingerprint)
+    {
+        Biometry::where('fingerprint', '=', $fingerprint)->update(array('fingerprint' => $newFingerprint));
+    }
+
+
+
 }
